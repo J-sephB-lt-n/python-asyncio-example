@@ -1,12 +1,18 @@
 # python-asyncio-example
-Example usage of concurrency in python using asyncio
+Example usage of threaded concurrency in python using asyncio
 
 The situation is this:
 
-* We have 8 workers.
+* We have multiple workers.
 
 * Each worker will continue to process tasks until they reach a termination condition. 
 
-* We want these workers to work concurrently.
+* Workers must work concurrently.
+
+To see it working, run:
+
+```bash
+$ python main.py
+```
 
  
