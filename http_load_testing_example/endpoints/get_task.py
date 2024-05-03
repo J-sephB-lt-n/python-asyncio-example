@@ -7,12 +7,15 @@ import time
 
 import flask
 
+import loadtest_config
+
 bp = flask.Blueprint("get_task", __name__)
 
 
 @bp.route("/get_task", methods=["GET"])
 def get_task():
-    time.sleep(1)
+    """TODO"""
+    time.sleep(loadtest_config.endpoint_process_time_nsecs["/get_task"])
     return flask.Response(
         random.choice(("get_gold", "get_oil", "get_water")), status=200
     )
