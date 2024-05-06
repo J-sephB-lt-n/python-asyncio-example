@@ -8,13 +8,15 @@ import time
 
 import flask
 
+import loadtest_config
+
 bp = flask.Blueprint("deposit_resource", __name__)
 
 
 @bp.route("/deposit_resource", methods=["POST"])
 def deposit_resource():
     input_json = flask.request.get_json()
-    time.sleep(1)
+    time.sleep(loadtest_config.ENDPOINT_PROCESS_TIME_NSECS["/get_task"])
     return flask.Response(
         json.dumps(
             {
